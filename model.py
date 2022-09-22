@@ -37,7 +37,7 @@ def modelManager(verbose):
     else:
         dataChoice = col5.radio("Dataset:",['COCO'])
 
-    batchSize = col6.radio('Batch size:',['1 (preferred)', '8'])
+    batchSize = col6.radio('Batch size:',['1', '8'])
     batchSize = int(batchSize.split()[0])
 
     st.markdown("""---""")
@@ -45,7 +45,7 @@ def modelManager(verbose):
     if verbose:
         st.write("Evaluation setup: **"+appChoice+"** application using **"+modelChoice+"** model")
 
-    if st.button('Execute inference task'):       
+    if st.button('Run inference'):       
         runModel(modelChoice,nDLA,nClusters,dataChoice,batchSize,verbose,appChoice)
     else:
         pass
